@@ -14,19 +14,23 @@ import {
 import { home } from "./index";
 
 // IMPORTANT: Replace with your own domain address - it's used for SEO in meta tags and schema
-const baseURL: string = "https://demo.magic-portfolio.com";
+const baseURL: string = "https://your-marketing-site.com";
 
+// Enable only the core routes needed for a focused marketing portfolio
 const routes: RoutesConfig = {
   "/": true,
   "/about": true,
   "/work": true,
-  "/blog": true,
-  "/gallery": true,
+  // Set to true later if you add real marketing articles
+  "/blog": false,
+  // Set to true later if you want a gallery of ad creatives or brand visuals
+  "/gallery": false,
 };
 
 const display: DisplayConfig = {
+  // Hide the time indicator by default to keep the header clean
   location: true,
-  time: true,
+  time: false,
   themeSwitcher: true,
 };
 
@@ -187,17 +191,17 @@ const mailchimp: MailchimpConfig = {
 // default schema data
 const schema: SchemaConfig = {
   logo: "",
-  type: "Organization",
-  name: "Once UI",
+  type: "Person",
+  name: home.title,
   description: home.description,
-  email: "lorant@once-ui.com",
+  email: "you@example.com",
 };
 
-// social links
+// social links used in SEO schema (update with your own profiles)
 const sameAs: SameAsConfig = {
-  threads: "https://www.threads.com/@once_ui",
-  linkedin: "https://www.linkedin.com/company/once-ui/",
-  discord: "https://discord.com/invite/5EyAQ4eNdS",
+  threads: "https://www.threads.net/your-handle",
+  linkedin: "https://www.linkedin.com/in/your-profile/",
+  discord: "",
 };
 
 // social sharing configuration for blog posts

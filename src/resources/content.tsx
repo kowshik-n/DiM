@@ -2,20 +2,23 @@ import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/
 import { Line, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
+  firstName: "Your",
+  lastName: "Name",
+  name: `Your Name`,
+  role: "Digital Marketing Specialist",
   avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  email: "you@example.com",
+  // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'.
+  // Use your own time zone (for India, "Asia/Kolkata").
+  location: "Asia/Kolkata",
+  // optional: Leave the array empty if you don't want to display languages
+  languages: ["English"],
 };
 
 const newsletter: Newsletter = {
   display: true,
-  title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: <>My weekly newsletter about creativity and engineering</>,
+  title: <>Subscribe to {person.firstName}'s marketing insights</>,
+  description: <>Actionable tips on performance marketing, SEO, and growth.</>,
 };
 
 const social: Social = [
@@ -58,26 +61,29 @@ const home: Home = {
   path: "/",
   image: "/images/og/home.jpg",
   label: "Home",
-  title: `${person.name}'s Portfolio`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  title: `${person.name} – ${person.role}`,
+  description: `Portfolio showcasing high-performing digital marketing campaigns by ${person.name}`,
+  headline: <>Helping brands grow with data‑driven digital marketing</>,
   featured: {
     display: true,
     title: (
       <Row gap="12" vertical="center">
-        <strong className="ml-4">Once UI</strong>{" "}
+        <strong className="ml-4">E‑commerce Brand</strong>{" "}
         <Line background="brand-alpha-strong" vert height="20" />
         <Text marginRight="4" onBackground="brand-medium">
-          Featured work
+          Featured case study
         </Text>
       </Row>
     ),
+    // This links to your primary case study under /work. You can update the slug later.
     href: "/work/building-once-ui-a-customizable-design-system",
   },
   subline: (
     <>
-    I'm Selene, a design engineer at <Text as="span" size="xl" weight="strong">ONCE UI</Text>, where I craft intuitive <br /> user experiences. After hours, I build my own projects.
-</>
+      I'm a performance‑focused digital marketer helping businesses scale with paid ads, SEO,
+      and conversion optimisation. From strategy to execution, I design campaigns that turn
+      clicks into customers.
+    </>
   ),
 };
 
@@ -85,7 +91,7 @@ const about: About = {
   path: "/about",
   label: "About",
   title: `About – ${person.name}`,
-  description: `Meet ${person.name}, ${person.role} from ${person.location}`,
+  description: `Meet ${person.name}, a ${person.role} helping brands grow online` ,
   tableOfContent: {
     display: true,
     subItems: false,
@@ -102,52 +108,125 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        {person.name} is a digital marketing specialist focused on helping small and mid‑size
+        businesses grow through measurable results. From performance ads and SEO to email and
+        funnel optimisation, the goal is always the same: more qualified leads and better ROI.
       </>
     ),
   },
   work: {
     display: true, // set to false to hide this section
-    title: "Work Experience",
+    title: "Experience & results",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "Digital, ads & campaign marketing",
+        timeframe: "Selected results",
+        role: "Digital marketing strategy & performance management",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Led a project with <strong>972.7% growth</strong>, <strong>620% engagement</strong>, and
+            <strong> 1.9K organic reach</strong>.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Optimised campaigns using <strong>SEO</strong>, <strong>SEM</strong>, and influencer
+            marketing for measurable results.
+          </>,
+          <>
+            Executed data‑driven campaigns that maximised audience engagement and conversions.
+          </>,
+          <>
+            Applied advanced audience segmentation to boost ad performance and ROI across channels.
           </>,
         ],
         images: [
-          // optional: leave the array empty if you don't want to display images
           {
             src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
+            alt: "Performance dashboard for digital campaigns",
             width: 16,
             height: 9,
           },
         ],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "Social media & brand strategy",
+        timeframe: "Selected results",
+        role: "Social media, brand awareness & campaign strategy",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Boosted TikTok engagement by <strong>8%</strong> and grew followers by
+            <strong> 15K+ </strong>through data‑driven strategies.
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            Delivered <strong>1.4M+ organic reach</strong> and <strong>100% impression growth</strong>
+            for <strong>10+ brands</strong> with 360° campaigns.
+          </>,
+          <>
+            Managed <strong>5 UGC creators</strong> and sold <strong>350+ SKUs</strong>, strengthening
+            brand loyalty.
+          </>,
+          <>
+            Optimised campaigns with real‑time analytics, supporting 5 ad‑hoc projects for maximum
+            ROI.
+          </>,
+        ],
+        images: [
+          {
+            src: "/images/projects/project-01/cover-02.jpg",
+            alt: "Social media content performance overview",
+            width: 16,
+            height: 9,
+          },
+        ],
+      },
+      {
+        company: "Business & growth strategy",
+        timeframe: "Selected results",
+        role: "Growth marketing, CRM & analytics",
+        achievements: [
+          <>
+            Achieved <strong>80%+ retention</strong> and reduced churn by <strong>0.2%</strong> with
+            targeted email and gamification strategies.
+          </>,
+          <>
+            Boosted user acquisition by <strong>5% QoQ</strong> through CRM‑driven onboarding and
+            retention journeys.
+          </>,
+          <>
+            Streamlined affiliate and tactical marketing, driving measurable growth and engagement.
+          </>,
+          <>
+            Leveraged A/B testing and data analysis to refine campaigns, improving revenue and
+            efficiency.
+          </>,
+        ],
+        images: [
+          {
+            src: "/images/projects/project-01/cover-03.jpg",
+            alt: "Growth and CRM performance charts",
+            width: 16,
+            height: 9,
+          },
+        ],
+      },
+      {
+        company: "Personal projects",
+        timeframe: "Ongoing",
+        role: "Content creation & personal brand growth",
+        achievements: [
+          <>
+            Produced <strong>65+ TikTok videos</strong>, generating <strong>1.5M+ impressions</strong>
+            and <strong>21K+ followers</strong>.
+          </>,
+          <>
+            Built a personal brand with <strong>415.9% traffic growth</strong> and
+            <strong> 30% engagement increase</strong>.
+          </>,
+          <>
+            Collaborated with <strong>11+ brands</strong> on KOL marketing strategies, driving
+            awareness and loyalty.
+          </>,
+          <>
+            Created hard‑selling content that boosted brand visibility and conversion rates.
           </>,
         ],
         images: [],
@@ -156,77 +235,149 @@ const about: About = {
   },
   studies: {
     display: true, // set to false to hide this section
-    title: "Studies",
+    title: "Certifications & education",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "Rakamin Academy – Scholarship Digital Marketing Bootcamp",
+        description: (
+          <>Intensive bootcamp focused on digital marketing strategy, ads management, and analytics.</>
+        ),
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "Rakamin Academy – Advanced Social Media Marketing",
+        description: (
+          <>Deep dive into TikTok, Instagram, and creator‑led campaign strategy for growth.</>
+        ),
+      },
+      {
+        name: "Coursera – Google Project Management Professional Certificate",
+        description: (
+          <>Developed project planning, execution, and stakeholder management skills.</>
+        ),
+      },
+      {
+        name: "Coursera – Google Data Analytics Professional Certificate",
+        description: (
+          <>Learned data analysis, dashboards, and insight‑driven decision making.</>
+        ),
+      },
+      {
+        name: "Dataquest.io – Business Analyst Certification",
+        description: (
+          <>Strengthened SQL, data storytelling, and business analysis capabilities.</>
+        ),
       },
     ],
   },
   technical: {
     display: true, // set to false to hide this section
-    title: "Technical skills",
+    title: "Skills, tools & platforms",
     skills: [
       {
-        title: "Figma",
+        title: "Digital, ads & campaign marketing",
         description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
+          <>
+            Planning full‑funnel campaigns, performance management, and optimisation across SEO, SEM,
+            influencer marketing, and paid ads.
+          </>
         ),
         tags: [
           {
-            name: "Figma",
-            icon: "figma",
+            name: "Digital marketing strategy",
+            icon: "rocket",
+          },
+          {
+            name: "Meta & Google Ads",
+            icon: "instagram",
           },
         ],
-        // optional: leave the array empty if you don't want to display images
         images: [
           {
             src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
+            alt: "Digital ads and campaign visuals",
             width: 16,
             height: 9,
           },
         ],
       },
       {
-        title: "Next.js",
+        title: "Social media, content & brand",
         description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
+          <>
+            Building content strategies, UGC collaborations, and brand systems that grow followers,
+            engagement, and long‑term awareness.
+          </>
         ),
         tags: [
           {
-            name: "JavaScript",
-            icon: "javascript",
+            name: "Content & branding",
+            icon: "document",
           },
           {
-            name: "Next.js",
-            icon: "nextjs",
-          },
-          {
-            name: "Supabase",
-            icon: "supabase",
+            name: "Social media strategy",
+            icon: "instagram",
           },
         ],
-        // optional: leave the array empty if you don't want to display images
         images: [
           {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
+            src: "/images/projects/project-01/cover-03.jpg",
+            alt: "Social media and brand assets",
             width: 16,
             height: 9,
           },
         ],
+      },
+      {
+        title: "Business, CRM & growth",
+        description: (
+          <>
+            Designing growth strategies, CRM journeys, and analytics setups that improve retention,
+            lifetime value, and revenue.
+          </>
+        ),
+        tags: [
+          {
+            name: "Growth marketing",
+            icon: "rocket",
+          },
+          {
+            name: "CRM & retention",
+            icon: "document",
+          },
+        ],
+        images: [
+          {
+            src: "/images/projects/project-01/cover-04.jpg",
+            alt: "Growth and CRM strategy visuals",
+            width: 16,
+            height: 9,
+          },
+        ],
+      },
+      {
+        title: "Tools & analytics stack",
+        description: (
+          <>
+            Comfortable working across analytics, ads, and creative tools: Google Analytics, Google Ads,
+            Google Search Console, Google Trends, Meta Ads, MoEngage, Power BI, Microsoft 365, Adobe
+            Creative Suite, Figma, and CapCut.
+          </>
+        ),
+        tags: [
+          {
+            name: "Analytics & reporting",
+            icon: "rocket",
+          },
+          {
+            name: "Meta & Google Ads",
+            icon: "instagram",
+          },
+          {
+            name: "Design & video tools",
+            icon: "figma",
+          },
+        ],
+        images: [],
       },
     ],
   },
@@ -234,28 +385,27 @@ const about: About = {
 
 const blog: Blog = {
   path: "/blog",
-  label: "Blog",
-  title: "Writing about design and tech...",
-  description: `Read what ${person.name} has been up to recently`,
+  label: "Insights",
+  title: "Thoughts on digital marketing and growth",
+  description: `Articles where ${person.name} breaks down campaigns, experiments, and lessons from the field.`,
   // Create new blog posts by adding a new .mdx file to app/blog/posts
-  // All posts will be listed on the /blog route
+  // All posts will be listed on the /blog route when routes["/blog"] is enabled
 };
 
 const work: Work = {
   path: "/work",
-  label: "Work",
-  title: `Projects – ${person.name}`,
-  description: `Design and dev projects by ${person.name}`,
-  // Create new project pages by adding a new .mdx file to app/blog/posts
+  label: "Case studies",
+  title: `Case studies – ${person.name}`,
+  description: `Selected digital marketing campaigns managed by ${person.name}`,
+  // Create new project pages by adding a new .mdx file to app/work/projects
   // All projects will be listed on the /home and /work routes
 };
 
 const gallery: Gallery = {
   path: "/gallery",
   label: "Gallery",
-  title: `Photo gallery – ${person.name}`,
-  description: `A photo collection by ${person.name}`,
-  // Images by https://lorant.one
+  title: `Campaign creatives – ${person.name}`,
+  description: `A visual gallery of ad creatives, landing pages, and brand visuals used in campaigns by ${person.name}`,
   // These are placeholder images, replace with your own
   images: [
     {
