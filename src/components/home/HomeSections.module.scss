@@ -13,40 +13,47 @@
 .heroSection {
   position: relative;
   border-radius: var(--radius-xl);
-  background: linear-gradient(
-    135deg,
-    var(--surface-background) 0%,
-    var(--brand-alpha-weak) 50%,
-    var(--accent-alpha-weak) 100%
-  );
+  // background: linear-gradient(
+  //   135deg,
+  //   var(--surface-background) 0%,
+  //   var(--brand-alpha-weak) 50%,
+  //   var(--accent-alpha-weak) 100%
+  // );
 
   &::before {
-    content: '';
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    // background: radial-gradient(
+    //   ellipse at 50% 20%,
+    //   var(--accent-alpha-weak) 0%,
+    //   transparent 60%
+    // );
+    border-radius: var(--radius-xl);
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  &::after {
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     background: radial-gradient(
-      ellipse at 50% 20%,
-      var(--accent-alpha-weak) 0%,
-      transparent 60%
-    );
-    border-radius: var(--radius-xl);
-    opacity: 0.4;
-    pointer-events: none;
-  }
-  
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-      radial-gradient(circle at 20% 80%, var(--brand-alpha-weak) 0%, transparent 40%),
-      radial-gradient(circle at 80% 80%, var(--accent-alpha-weak) 0%, transparent 40%);
+        circle at 20% 80%,
+        var(--brand-alpha-weak) 0%,
+        transparent 40%
+      ),
+      radial-gradient(
+        circle at 80% 80%,
+        var(--accent-alpha-weak) 0%,
+        transparent 40%
+      );
     border-radius: var(--radius-xl);
     opacity: 0.3;
     pointer-events: none;
@@ -66,15 +73,20 @@
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .avatarGlow {
   position: relative;
-  
+
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     inset: -6px;
     border-radius: 50%;
@@ -88,9 +100,9 @@
     filter: blur(20px);
     animation: pulse 3s ease-in-out infinite;
   }
-  
+
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     inset: -3px;
     border-radius: 50%;
@@ -105,7 +117,8 @@
 }
 
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0.6;
     transform: scale(1);
   }
@@ -132,14 +145,19 @@
 }
 
 @keyframes gradientShift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 .roleTag {
   backdrop-filter: blur(8px);
   transition: all var(--transition-micro-medium);
-  
+
   &:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-m);
@@ -151,7 +169,8 @@
 }
 
 @keyframes pulse-dot {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
     box-shadow: 0 0 0 0 var(--brand-background-strong);
   }
@@ -164,7 +183,7 @@
 .socialLinks {
   .socialButton {
     transition: all var(--transition-micro-medium);
-    
+
     &:hover {
       transform: translateY(-2px);
       box-shadow: var(--shadow-m);
@@ -176,9 +195,9 @@
   transition: all var(--transition-micro-medium);
   position: relative;
   overflow: hidden;
-  
+
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 50%;
     left: 50%;
@@ -189,12 +208,12 @@
     transform: translate(-50%, -50%);
     transition: width 0.6s, height 0.6s;
   }
-  
+
   &:hover::before {
     width: 300px;
     height: 300px;
   }
-  
+
   &:hover {
     transform: translateY(-3px);
     box-shadow: var(--shadow-l);
@@ -223,16 +242,16 @@
   flex-direction: column;
   justify-content: space-between;
   aspect-ratio: 1 / 1;
-  
+
   &:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-l);
     border-color: var(--brand-border-medium);
-    
+
     .cardTopBar {
       height: 6px;
     }
-    
+
     .iconBox {
       transform: scale(1.05);
     }
@@ -273,9 +292,9 @@
   position: relative;
   transition: all var(--transition-micro-medium);
   background: var(--surface-background);
-  
+
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
     border-radius: var(--radius-xl);
@@ -285,22 +304,21 @@
       var(--accent-border-weak),
       var(--brand-border-weak)
     );
-    -webkit-mask: 
-      linear-gradient(#fff 0 0) content-box, 
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
       linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     opacity: 0;
     transition: opacity var(--transition-micro-medium);
   }
-  
+
   &:hover {
     box-shadow: var(--shadow-m);
-    
+
     &::before {
       opacity: 1;
     }
-    
+
     .skillIconBox {
       transform: rotate(5deg) scale(1.05);
     }
@@ -316,12 +334,12 @@
   position: relative;
   transition: all var(--transition-micro-medium);
   background: var(--surface-background);
-  
+
   &:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-m);
     border-color: var(--accent-border-weak);
-    
+
     .certIconBox {
       transform: scale(1.1);
       background: var(--accent-background-weak);
@@ -338,16 +356,16 @@
   .experienceGrid {
     grid-template-columns: 1fr;
   }
-  
+
   .experienceCard {
     aspect-ratio: auto;
     min-height: auto;
   }
-  
+
   .certCard {
     min-width: 100%;
   }
-  
+
   .heroSection {
     padding-left: var(--static-space-m);
     padding-right: var(--static-space-m);

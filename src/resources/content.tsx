@@ -1,4 +1,13 @@
-import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
+import {
+  About,
+  Blog,
+  Gallery,
+  Home,
+  Newsletter,
+  Person,
+  Social,
+  Work,
+} from "@/types";
 import { Line, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
@@ -68,7 +77,7 @@ const home: Home = {
     display: true,
     title: (
       <Row gap="12" vertical="center">
-        <strong className="ml-4">E‑commerce Brand</strong>{" "}
+        <strong className="ml-4">Digital Marketing Specialist</strong>{" "}
         <Line background="brand-alpha-strong" vert height="20" />
         <Text marginRight="4" onBackground="brand-medium">
           Featured case study
@@ -80,9 +89,9 @@ const home: Home = {
   },
   subline: (
     <>
-      I'm a performance‑focused digital marketer helping businesses scale with paid ads, SEO,
-      and conversion optimisation. From strategy to execution, I design campaigns that turn
-      clicks into customers.
+      I'm a performance‑focused digital marketer helping businesses scale with
+      paid ads, SEO, and conversion optimisation. From strategy to execution, I
+      design campaigns that turn clicks into customers.
     </>
   ),
 };
@@ -91,7 +100,7 @@ const about: About = {
   path: "/about",
   label: "About",
   title: `About – ${person.name}`,
-  description: `Meet ${person.name}, a ${person.role} helping brands grow online` ,
+  description: `Meet ${person.name}, a ${person.role} helping brands grow online`,
   tableOfContent: {
     display: true,
     subItems: false,
@@ -108,9 +117,10 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        {person.name} is a digital marketing specialist focused on helping small and mid‑size
-        businesses grow through measurable results. From performance ads and SEO to email and
-        funnel optimisation, the goal is always the same: more qualified leads and better ROI.
+        {person.name} is a digital marketing specialist focused on helping small
+        and mid‑size businesses grow through measurable results. From
+        performance ads and SEO to email and funnel optimisation, the goal is
+        always the same: more qualified leads and better ROI.
       </>
     ),
   },
@@ -124,18 +134,21 @@ const about: About = {
         role: "Digital marketing strategy & performance management",
         achievements: [
           <>
-            Led a project with <strong>972.7% growth</strong>, <strong>620% engagement</strong>, and
+            Led a project with <strong>972.7% growth</strong>,{" "}
+            <strong>620% engagement</strong>, and
             <strong> 1.9K organic reach</strong>.
           </>,
           <>
-            Optimised campaigns using <strong>SEO</strong>, <strong>SEM</strong>, and influencer
-            marketing for measurable results.
+            Optimised campaigns using <strong>SEO</strong>, <strong>SEM</strong>
+            , and influencer marketing for measurable results.
           </>,
           <>
-            Executed data‑driven campaigns that maximised audience engagement and conversions.
+            Executed data‑driven campaigns that maximised audience engagement
+            and conversions.
           </>,
           <>
-            Applied advanced audience segmentation to boost ad performance and ROI across channels.
+            Applied advanced audience segmentation to boost ad performance and
+            ROI across channels.
           </>,
         ],
         images: [
@@ -153,20 +166,22 @@ const about: About = {
         role: "Social media, brand awareness & campaign strategy",
         achievements: [
           <>
-            Boosted TikTok engagement by <strong>8%</strong> and grew followers by
+            Boosted TikTok engagement by <strong>8%</strong> and grew followers
+            by
             <strong> 15K+ </strong>through data‑driven strategies.
           </>,
           <>
-            Delivered <strong>1.4M+ organic reach</strong> and <strong>100% impression growth</strong>
+            Delivered <strong>1.4M+ organic reach</strong> and{" "}
+            <strong>100% impression growth</strong>
             for <strong>10+ brands</strong> with 360° campaigns.
           </>,
           <>
-            Managed <strong>5 UGC creators</strong> and sold <strong>350+ SKUs</strong>, strengthening
-            brand loyalty.
+            Managed <strong>5 UGC creators</strong> and sold{" "}
+            <strong>350+ SKUs</strong>, strengthening brand loyalty.
           </>,
           <>
-            Optimised campaigns with real‑time analytics, supporting 5 ad‑hoc projects for maximum
-            ROI.
+            Optimised campaigns with real‑time analytics, supporting 5 ad‑hoc
+            projects for maximum ROI.
           </>,
         ],
         images: [
@@ -184,19 +199,21 @@ const about: About = {
         role: "Growth marketing, CRM & analytics",
         achievements: [
           <>
-            Achieved <strong>80%+ retention</strong> and reduced churn by <strong>0.2%</strong> with
-            targeted email and gamification strategies.
+            Achieved <strong>80%+ retention</strong> and reduced churn by{" "}
+            <strong>0.2%</strong> with targeted email and gamification
+            strategies.
           </>,
           <>
-            Boosted user acquisition by <strong>5% QoQ</strong> through CRM‑driven onboarding and
-            retention journeys.
+            Boosted user acquisition by <strong>5% QoQ</strong> through
+            CRM‑driven onboarding and retention journeys.
           </>,
           <>
-            Streamlined affiliate and tactical marketing, driving measurable growth and engagement.
+            Streamlined affiliate and tactical marketing, driving measurable
+            growth and engagement.
           </>,
           <>
-            Leveraged A/B testing and data analysis to refine campaigns, improving revenue and
-            efficiency.
+            Leveraged A/B testing and data analysis to refine campaigns,
+            improving revenue and efficiency.
           </>,
         ],
         images: [
@@ -214,19 +231,22 @@ const about: About = {
         role: "Content creation & personal brand growth",
         achievements: [
           <>
-            Produced <strong>65+ TikTok videos</strong>, generating <strong>1.5M+ impressions</strong>
+            Produced <strong>65+ TikTok videos</strong>, generating{" "}
+            <strong>1.5M+ impressions</strong>
             and <strong>21K+ followers</strong>.
           </>,
           <>
-            Built a personal brand with <strong>415.9% traffic growth</strong> and
+            Built a personal brand with <strong>415.9% traffic growth</strong>{" "}
+            and
             <strong> 30% engagement increase</strong>.
           </>,
           <>
-            Collaborated with <strong>11+ brands</strong> on KOL marketing strategies, driving
-            awareness and loyalty.
+            Collaborated with <strong>11+ brands</strong> on KOL marketing
+            strategies, driving awareness and loyalty.
           </>,
           <>
-            Created hard‑selling content that boosted brand visibility and conversion rates.
+            Created hard‑selling content that boosted brand visibility and
+            conversion rates.
           </>,
         ],
         images: [],
@@ -240,31 +260,46 @@ const about: About = {
       {
         name: "Rakamin Academy – Scholarship Digital Marketing Bootcamp",
         description: (
-          <>Intensive bootcamp focused on digital marketing strategy, ads management, and analytics.</>
+          <>
+            Intensive bootcamp focused on digital marketing strategy, ads
+            management, and analytics.
+          </>
         ),
       },
       {
         name: "Rakamin Academy – Advanced Social Media Marketing",
         description: (
-          <>Deep dive into TikTok, Instagram, and creator‑led campaign strategy for growth.</>
+          <>
+            Deep dive into TikTok, Instagram, and creator‑led campaign strategy
+            for growth.
+          </>
         ),
       },
       {
         name: "Coursera – Google Project Management Professional Certificate",
         description: (
-          <>Developed project planning, execution, and stakeholder management skills.</>
+          <>
+            Developed project planning, execution, and stakeholder management
+            skills.
+          </>
         ),
       },
       {
         name: "Coursera – Google Data Analytics Professional Certificate",
         description: (
-          <>Learned data analysis, dashboards, and insight‑driven decision making.</>
+          <>
+            Learned data analysis, dashboards, and insight‑driven decision
+            making.
+          </>
         ),
       },
       {
         name: "Dataquest.io – Business Analyst Certification",
         description: (
-          <>Strengthened SQL, data storytelling, and business analysis capabilities.</>
+          <>
+            Strengthened SQL, data storytelling, and business analysis
+            capabilities.
+          </>
         ),
       },
     ],
@@ -277,8 +312,8 @@ const about: About = {
         title: "Digital, ads & campaign marketing",
         description: (
           <>
-            Planning full‑funnel campaigns, performance management, and optimisation across SEO, SEM,
-            influencer marketing, and paid ads.
+            Planning full‑funnel campaigns, performance management, and
+            optimisation across SEO, SEM, influencer marketing, and paid ads.
           </>
         ),
         tags: [
@@ -304,8 +339,8 @@ const about: About = {
         title: "Social media, content & brand",
         description: (
           <>
-            Building content strategies, UGC collaborations, and brand systems that grow followers,
-            engagement, and long‑term awareness.
+            Building content strategies, UGC collaborations, and brand systems
+            that grow followers, engagement, and long‑term awareness.
           </>
         ),
         tags: [
@@ -331,8 +366,8 @@ const about: About = {
         title: "Business, CRM & growth",
         description: (
           <>
-            Designing growth strategies, CRM journeys, and analytics setups that improve retention,
-            lifetime value, and revenue.
+            Designing growth strategies, CRM journeys, and analytics setups that
+            improve retention, lifetime value, and revenue.
           </>
         ),
         tags: [
@@ -358,9 +393,10 @@ const about: About = {
         title: "Tools & analytics stack",
         description: (
           <>
-            Comfortable working across analytics, ads, and creative tools: Google Analytics, Google Ads,
-            Google Search Console, Google Trends, Meta Ads, MoEngage, Power BI, Microsoft 365, Adobe
-            Creative Suite, Figma, and CapCut.
+            Comfortable working across analytics, ads, and creative tools:
+            Google Analytics, Google Ads, Google Search Console, Google Trends,
+            Meta Ads, MoEngage, Power BI, Microsoft 365, Adobe Creative Suite,
+            Figma, and CapCut.
           </>
         ),
         tags: [

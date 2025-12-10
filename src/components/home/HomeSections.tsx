@@ -18,7 +18,7 @@ import styles from "./HomeSections.module.scss";
 
 export const HomeSections = () => {
   return (
-    <Column fillWidth gap="xl" paddingY="xl">
+    <Column fillWidth gap="xl">
       {/* Hero/Intro Section */}
       {about.intro.display && (
         <Column
@@ -88,7 +88,7 @@ export const HomeSections = () => {
                 >
                   {person.name}
                 </Heading>
-                <Row
+                {/* <Row
                   className={styles.roleTag}
                   background="brand-alpha-weak"
                   border="brand-alpha-medium"
@@ -112,11 +112,11 @@ export const HomeSections = () => {
                   >
                     {person.role}
                   </Text>
-                </Row>
+                </Row> */}
               </Column>
 
               {/* Location and Languages */}
-              <Row gap="8" wrap horizontal="center" paddingTop="4">
+              {/* <Row gap="8" wrap horizontal="center" paddingTop="4">
                 <Row
                   gap="6"
                   vertical="center"
@@ -140,7 +140,7 @@ export const HomeSections = () => {
                     ))}
                   </>
                 )}
-              </Row>
+              </Row> */}
 
               {/* Social Links */}
               {social.length > 0 && (
@@ -223,7 +223,7 @@ export const HomeSections = () => {
 
       {/* Experience & Results Cards */}
       {about.work.display && (
-        <Column fillWidth gap="xl" paddingTop="xl">
+        <Column id="experience-results" fillWidth gap="xl" paddingTop="xl">
           <Column gap="12" horizontal="center" align="center">
             <Heading as="h2" variant="display-strong-l" align="center">
               {about.work.title}
@@ -339,7 +339,7 @@ export const HomeSections = () => {
 
       {/* Skills, Tools & Platforms */}
       {about.technical.display && (
-        <Column fillWidth gap="xl" paddingTop="xl">
+        <Column id="skills-tools-platforms" fillWidth gap="xl" paddingTop="xl">
           <Column gap="12" horizontal="center" align="center">
             <Heading as="h2" variant="display-strong-l" align="center">
               {about.technical.title}
@@ -419,7 +419,7 @@ export const HomeSections = () => {
 
       {/* Certifications & Education */}
       {about.studies.display && (
-        <Column fillWidth gap="xl" paddingTop="xl">
+        <Column id="certifications-education" fillWidth gap="xl" paddingTop="xl">
           <Column gap="12" horizontal="center" align="center">
             <Heading as="h2" variant="display-strong-l" align="center">
               {about.studies.title}

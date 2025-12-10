@@ -19,7 +19,7 @@ const baseURL: string = "https://your-marketing-site.com";
 // Enable only the core routes needed for a focused marketing portfolio
 const routes: RoutesConfig = {
   "/": true,
-  "/about": true,
+  "/about": false,
   "/work": true,
   // Set to true later if you add real marketing articles
   "/blog": false,
