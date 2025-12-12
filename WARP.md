@@ -4,13 +4,21 @@ This file provides guidance to WARP (warp.dev) when working with code in this re
 
 ## Project overview
 
-This repo is a Next.js App Router project built on top of the **Magic Portfolio** template from Once UI. It renders a marketing/portfolio site with MDX-driven content for case studies and blog posts, and a data/config-driven layout for the rest of the pages.
+This repo is a Next.js App Router project built on top of the **Magic Portfolio** template from Once UI. It has been transformed into a **digital marketing agency website** with modern gradient styling, service showcases, and comprehensive service detail pages.
 
 Key technologies:
 - Next.js (`src/app` with App Router)
 - React + TypeScript
 - Once UI design system (`@once-ui-system/core`)
 - MDX content loading via `gray-matter` and custom utilities
+- SCSS modules for custom styling and animations
+
+**Agency transformation features:**
+- Modern purple/blue gradient theme with dark mode
+- Service cards with hover effects and gradient borders
+- Testimonials section with client results
+- Comprehensive service pages for Meta Ads, Social Media, Content Creation, and SEO
+- Performance-focused branding ("We Create Brands That Grow Fast")
 
 Authoritative documentation for the template lives at: https://docs.once-ui.com/docs/magic-portfolio/quick-start
 
@@ -156,3 +164,110 @@ Content locations expected by the template:
 - Projects/case studies: `src/app/work/projects/*.mdx`.
 
 When adding new posts or projects, follow the frontmatter conventions used by the existing `.mdx` files so `getPosts` and the UI components can render them without extra wiring.
+
+## Digital Agency Features & Components
+
+### Agency-Specific Components
+
+The site includes custom components designed for digital marketing agency presentation:
+
+- `src/components/services/Services.tsx`:
+  - Displays the 4 core service offerings (Meta Ads, Social Media, Content Creation, SEO)
+  - Gradient card design with hover effects (lift + glow)
+  - Features checkmark list for each service
+  - Responsive grid layout with RevealFx animations
+  - Uses `Services.module.scss` for hover animations and gradient effects
+
+- `src/components/services/Testimonials.tsx`:
+  - Client testimonial showcase with result badges
+  - Gradient border effects on hover
+  - Three featured testimonials with specific metrics (972.7% Growth, 620% Engagement, 300% More Leads)
+  - Uses `Testimonials.module.scss` for styling
+
+### Service Detail Pages
+
+Four comprehensive service pages are available as MDX case studies under `src/app/work/projects`:
+
+1. **Meta Advertising** (`meta-advertising-services.mdx`):
+   - Full-funnel campaign services
+   - Audience research and targeting
+   - Creative development and A/B testing
+   - Conversion tracking and reporting
+   - Pricing packages ($999-$2999+/month)
+   - Case study: 972.7% growth in 3 months
+
+2. **Social Media Management** (`social-media-management.mdx`):
+   - Multi-platform management (Instagram, Facebook, TikTok, LinkedIn, etc.)
+   - Content planning and posting
+   - Community engagement
+   - Influencer collaboration
+   - Pricing packages ($699-$2999+/month)
+   - Case study: 8% engagement boost + 15K followers
+
+3. **Content Creation** (`content-creation-services.mdx`):
+   - Social media content (posts, reels, stories)
+   - Ad creatives for campaigns
+   - Photography and video production
+   - Brand assets and templates
+   - Pricing packages ($899-$3499+/month)
+   - Case study: 1.5M+ impressions through UGC content
+
+4. **SEO Services** (`seo-services.mdx`):
+   - Complete SEO audits (technical, on-page, off-page)
+   - Keyword research and strategy
+   - Local SEO optimization
+   - Link building and content strategy
+   - Pricing packages ($799-$2999+/month)
+   - Case study: 300% organic traffic growth
+
+### Visual Theme Configuration
+
+The agency theme uses a modern gradient style configured in `src/resources/once-ui.config.ts`:
+
+- **Theme**: Dark mode for premium feel
+- **Brand color**: Violet (purple)
+- **Accent color**: Cyan (blue)
+- **Border style**: Playful (rounded corners)
+- **Surface**: Translucent (glass effect)
+- **Solid style**: Plastic (for modern gradient feel)
+- **Gradient effect**: Enabled with purple-to-blue gradient (80% opacity)
+- **Background effects**: Cursor-following mask, gradient overlay, dot pattern
+
+These settings create the signature purple/blue gradient look throughout the site.
+
+### Content Configuration for Agency
+
+Key content updates in `src/resources/content.tsx`:
+
+- **Person/Agency name**: "Digital Growth Agency"
+- **Role**: "Performance Marketing & Growth"
+- **Hero headline**: "We Create Brands That Grow Fast"
+- **Subline**: Emphasizes end-to-end services from Meta Ads to SEO
+- **Featured badge**: Shows real results ("972.7% Growth · 620% Engagement")
+- **Newsletter**: Positioned as marketing insights for businesses
+
+### Home Page Structure
+
+The home page (`src/app/page.tsx`) now follows this structure:
+
+1. Hero section with agency headline and subline (via `HomeSections`)
+2. **Services section** - showcases 4 core services with gradient cards
+3. Featured project/case study
+4. **Testimonials section** - client results and social proof
+5. More projects (if available)
+6. Blog posts (if enabled in routes)
+7. Newsletter signup
+
+This structure prioritizes service showcase and social proof for conversion optimization.
+
+### Styling Approach
+
+Service components use SCSS modules for advanced styling:
+
+- **Gradient borders**: Created with `::after` pseudo-elements
+- **Hover effects**: Transform (translateY), box-shadow, and gradient opacity transitions
+- **Icon animations**: Scale and glow effects on hover
+- **Z-index layering**: Proper stacking for gradient overlays
+- **CSS custom properties**: Leverages Once UI design tokens (e.g., `var(--brand-background-strong)`)
+
+When modifying styles, maintain consistency with the gradient theme and ensure hover states are smooth (0.3s cubic-bezier transitions).

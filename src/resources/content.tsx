@@ -12,11 +12,11 @@ import { Line, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
   firstName: "Your",
-  lastName: "Name",
-  name: `Your Name`,
-  role: "Digital Marketing Specialist",
+  lastName: "Agency",
+  name: `Digital Growth Agency`,
+  role: "Performance Marketing & Growth",
   avatar: "/images/avatar.jpg",
-  email: "you@example.com",
+  email: "hello@digitalagency.com",
   // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'.
   // Use your own time zone (for India, "Asia/Kolkata").
   location: "Asia/Kolkata",
@@ -26,8 +26,8 @@ const person: Person = {
 
 const newsletter: Newsletter = {
   display: true,
-  title: <>Subscribe to {person.firstName}'s marketing insights</>,
-  description: <>Actionable tips on performance marketing, SEO, and growth.</>,
+  title: <>Get Marketing Insights That Actually Work</>,
+  description: <>Join 500+ businesses receiving actionable tips on Meta Ads, SEO, and growth strategies delivered monthly.</>,
 };
 
 const social: Social = [
@@ -70,17 +70,17 @@ const home: Home = {
   path: "/",
   image: "/images/og/home.jpg",
   label: "Home",
-  title: `${person.name} – ${person.role}`,
-  description: `Portfolio showcasing high-performing digital marketing campaigns by ${person.name}`,
-  headline: <>Helping brands grow with data‑driven digital marketing</>,
+  title: `${person.name} – We Create Brands That Grow Fast`,
+  description: `Data-driven digital marketing agency specializing in Meta Ads, SEO, Social Media, and Content Creation for growing businesses`,
+  headline: <>We Create Brands That Grow Fast</>,
   featured: {
     display: true,
     title: (
       <Row gap="12" vertical="center">
-        <strong className="ml-4">Digital Marketing Specialist</strong>{" "}
+        <strong className="ml-4">Performance Marketing</strong>{" "}
         <Line background="brand-alpha-strong" vert height="20" />
         <Text marginRight="4" onBackground="brand-medium">
-          Featured case study
+          972.7% Growth · 620% Engagement
         </Text>
       </Row>
     ),
@@ -89,9 +89,9 @@ const home: Home = {
   },
   subline: (
     <>
-      I'm a performance‑focused digital marketer helping businesses scale with
-      paid ads, SEO, and conversion optimisation. From strategy to execution, I
-      design campaigns that turn clicks into customers.
+      Performance Marketing for Growing Businesses. End-to-end services from
+      Meta Ads to SEO—helping brands scale with data-driven strategies and
+      creative excellence.
     </>
   ),
 };
