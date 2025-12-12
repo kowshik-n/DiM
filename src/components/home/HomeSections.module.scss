@@ -289,66 +289,14 @@
 
 // Skills Cards
 .skillCard {
-  position: relative;
-  transition: all var(--transition-micro-medium);
-  background: var(--surface-background);
-
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: var(--radius-xl);
-    padding: 1px;
-    background: linear-gradient(
-      135deg,
-      var(--accent-border-weak),
-      var(--brand-border-weak)
-    );
-    -webkit-mask: linear-gradient(#fff 0 0) content-box,
-      linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    opacity: 0;
-    transition: opacity var(--transition-micro-medium);
-  }
-
-  &:hover {
-    box-shadow: var(--shadow-m);
-
-    &::before {
-      opacity: 1;
-    }
-
-    .skillIconBox {
-      transform: rotate(5deg) scale(1.05);
-    }
-  }
 }
-
 .skillIconBox {
-  transition: transform var(--transition-micro-medium);
 }
 
 // Certification Cards
 .certCard {
-  position: relative;
-  transition: all var(--transition-micro-medium);
-  background: var(--surface-background);
-
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-m);
-    border-color: var(--accent-border-weak);
-
-    .certIconBox {
-      transform: scale(1.1);
-      background: var(--accent-background-weak);
-    }
-  }
 }
-
 .certIconBox {
-  transition: all var(--transition-micro-medium);
 }
 
 // Responsive
