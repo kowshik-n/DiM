@@ -1,0 +1,152 @@
+"use client";
+
+import React from "react";
+import {
+  Column,
+  Row,
+  Heading,
+  Text,
+  Avatar,
+  Button,
+  IconButton,
+  Badge,
+} from "@once-ui-system/core";
+import { about, person, social, home } from "@/resources";
+import styles from "./HomeSections.module.scss";
+
+export const HeroSection = () => {
+  if (!about.intro.display) return null;
+
+  return (
+    <Column
+      fillWidth
+      gap="l"
+      horizontal="center"
+      className={styles.heroSection}
+      paddingY="32"
+      paddingX="l"
+    >
+      <Row fillWidth className={styles.heroContent}>
+        {/* Left: headline and intro copy */}
+        <Column gap="m" align="start" className={styles.heroCopy}>
+          {home.featured.display && (
+            <Row paddingBottom="12">
+              <Badge
+                background="brand-alpha-weak"
+                paddingX="12"
+                paddingY="4"
+                onBackground="neutral-strong"
+                textVariant="label-default-s"
+                arrow={false}
+                href={home.featured.href}
+              >
+                <Row paddingY="2">{home.featured.title}</Row>
+              </Badge>
+            </Row>
+          )}
+          <Heading
+            variant="display-strong-m"
+            align="left"
+            className={styles.heroHeadline}
+          >
+            {home.headline}
+          </Heading>
+          <Text
+            variant="heading-default-l"
+            onBackground="neutral-weak"
+            align="left"
+          >
+            {home.subline}
+          </Text>
+        </Column>
+
+        {/* Right: avatar, name, social, CTA */}
+        <Column
+          gap="m"
+          horizontal="center"
+          align="start"
+          className={styles.heroProfile}
+        >
+          {about.avatar.display && (
+            <Column className={styles.avatarWrapper} gap="0">
+              <div className={styles.avatarGlow}>
+                <Avatar src={person.avatar} size="xl" />
+              </div>
+            </Column>
+          )}
+
+          <Column gap="8" horizontal="center" align="center">
+            <Heading
+              variant="display-strong-l"
+              align="center"
+              className={styles.heroName}
+            >
+              {person.name}
+            </Heading>
+          </Column>
+
+          {social.length > 0 && (
+            <Row
+              gap="8"
+              wrap
+              horizontal="center"
+              paddingTop="12"
+              className={styles.socialLinks}
+            >
+              {social
+                .filter((item) => item.essential)
+                .map(
+                  (item) =>
+                    item.link && (
+                      <React.Fragment key={item.name}>
+                        <Row s={{ hide: true }}>
+                          <Button
+                            href={item.link}
+                            prefixIcon={item.icon}
+                            label={item.name}
+                            size="m"
+                            variant="secondary"
+                            className={styles.socialButton}
+                          />
+                        </Row>
+                        <Row hide s={{ hide: false }}>
+                          <IconButton
+                            size="l"
+                            href={item.link}
+                            icon={item.icon}
+                            variant="secondary"
+                            className={styles.socialButton}
+                          />
+                        </Row>
+                      </React.Fragment>
+                    )
+                )}
+            </Row>
+          )}
+
+          <Row gap="8" wrap horizontal="center" paddingTop="8">
+            {about.calendar.display && (
+              <Button
+                href={about.calendar.link}
+                size="m"
+                variant="primary"
+                prefixIcon="calendar"
+                className={styles.ctaButton}
+              >
+                Schedule a call
+              </Button>
+            )}
+            <Button
+              href={`mailto:${person.email}`}
+              size="m"
+              variant="secondary"
+              prefixIcon="email"
+            >
+              Get in touch
+            </Button>
+          </Row>
+        </Column>
+      </Row>
+    </Column>
+  );
+};

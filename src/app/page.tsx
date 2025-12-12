@@ -10,7 +10,7 @@ import {
   Line,
 } from "@once-ui-system/core";
 import { home, about, person, baseURL, routes } from "@/resources";
-import { Mailchimp, HomeSections, Services, Testimonials } from "@/components";
+import { HeroSection, HomeSections, Mailchimp, Services, Testimonials } from "@/components";
 import { Projects } from "@/components/work/Projects";
 import { Posts } from "@/components/blog/Posts";
 
@@ -40,13 +40,18 @@ export default function Home() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
-      {/* All About/Profile Content (hero + about sections) */}
+      {/* Hero */}
       <RevealFx translateY="16" delay={0.4}>
-        <HomeSections />
+        <HeroSection />
       </RevealFx>
 
-      {/* Services Section */}
+      {/* Services (immediately after hero) */}
       <Services />
+
+      {/* About/Profile Sections */}
+      <RevealFx translateY="16" delay={0.55}>
+        <HomeSections />
+      </RevealFx>
 
       {/* Featured Projects */}
       <RevealFx translateY="16" delay={0.6}>

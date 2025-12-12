@@ -7,6 +7,7 @@ interface Service {
   icon: string;
   title: string;
   description: string;
+  image: { src: string; alt: string };
   features?: string[];
 }
 
@@ -15,6 +16,10 @@ const services: Service[] = [
     icon: "instagram",
     title: "Meta Advertising",
     description: "Full-funnel Facebook & Instagram ad campaigns that drive real results.",
+    image: {
+      src: "/images/projects/project-01/cover-01.jpg",
+      alt: "Meta advertising campaign dashboard",
+    },
     features: [
       "Campaign setup & funnel creation",
       "Audience research & targeting",
@@ -27,6 +32,10 @@ const services: Service[] = [
     icon: "users",
     title: "Social Media Management",
     description: "Build your brand presence and engage your audience effectively.",
+    image: {
+      src: "/images/projects/project-01/cover-02.jpg",
+      alt: "Social media content and analytics",
+    },
     features: [
       "Content planning & strategy",
       "Caption writing & hashtags",
@@ -39,6 +48,10 @@ const services: Service[] = [
     icon: "document",
     title: "Content Creation",
     description: "High-quality content that captures attention and drives conversions.",
+    image: {
+      src: "/images/projects/project-01/cover-03.jpg",
+      alt: "Content creation and creative production",
+    },
     features: [
       "Social media posts (reels, stories)",
       "Ad creatives for campaigns",
@@ -51,6 +64,10 @@ const services: Service[] = [
     icon: "rocket",
     title: "SEO Services",
     description: "Rank higher on Google and drive organic traffic that converts.",
+    image: {
+      src: "/images/projects/project-01/cover-04.jpg",
+      alt: "SEO growth chart and keyword strategy",
+    },
     features: [
       "Complete website SEO audit",
       "Keyword research & strategy",
@@ -87,79 +104,84 @@ export const Services = () => {
         </RevealFx>
       </Column>
 
-      <Row
-        fillWidth
-        gap="m"
-        paddingX="l"
-        wrap
-        horizontal="center"
-      >
+      <Column fillWidth gap="m" paddingX="l">
         {services.map((service, index) => (
           <RevealFx
             key={service.title}
             translateY="16"
-            delay={0.4 + index * 0.1}
+            delay={0.35 + index * 0.08}
           >
-            <Column
-              className={styles.serviceCard}
-              gap="m"
+            <Row
+              className={styles.serviceRow}
+              fillWidth
+              gap="xl"
               padding="xl"
-              radius="l"
+              radius="xl"
               border="neutral-alpha-weak"
               background="surface"
-              fillWidth
-              style={{
-                maxWidth: "480px",
-                minHeight: "380px",
-              }}
+              vertical="center"
+              s={{ direction: "column", gap: "l" }}
             >
-              <Row gap="s" vertical="center">
-                <Column
-                  className={styles.iconWrapper}
-                  padding="m"
-                  radius="m"
-                  background="brand-alpha-weak"
-                  horizontal="center"
-                  vertical="center"
-                  style={{ width: "56px", height: "56px" }}
-                >
-                  <Icon
-                    name={service.icon as any}
-                    size="l"
-                    onBackground="brand-strong"
-                  />
-                </Column>
-              </Row>
+              {/* Left: content */}
+              <Column className={styles.serviceCopy} gap="m" flex={1}>
+                <Row gap="s" vertical="center">
+                  <Column
+                    className={styles.iconWrapper}
+                    padding="m"
+                    radius="m"
+                    background="brand-alpha-weak"
+                    horizontal="center"
+                    vertical="center"
+                    style={{ width: "56px", height: "56px" }}
+                  >
+                    <Icon
+                      name={service.icon as any}
+                      size="l"
+                      onBackground="brand-strong"
+                    />
+                  </Column>
+                  <Heading as="h3" variant="heading-strong-xl">
+                    {service.title}
+                  </Heading>
+                </Row>
 
-              <Column gap="s">
-                <Heading as="h3" variant="heading-strong-l">
-                  {service.title}
-                </Heading>
-                <Text variant="body-default-m" onBackground="neutral-weak">
+                <Text variant="body-default-l" onBackground="neutral-weak">
                   {service.description}
                 </Text>
+
+                {service.features && (
+                  <Column gap="xs" paddingTop="xs">
+                    {service.features.map((feature) => (
+                      <Row key={feature} gap="s" vertical="center">
+                        <Icon
+                          name="check"
+                          size="xs"
+                          onBackground="accent-strong"
+                        />
+                        <Text variant="body-default-s" onBackground="neutral-medium">
+                          {feature}
+                        </Text>
+                      </Row>
+                    ))}
+                  </Column>
+                )}
               </Column>
 
-              {service.features && (
-                <Column gap="xs" paddingTop="s">
-                  {service.features.map((feature, idx) => (
-                    <Row key={idx} gap="s" vertical="center">
-                      <Icon
-                        name="check"
-                        size="xs"
-                        onBackground="accent-strong"
-                      />
-                      <Text variant="body-default-s" onBackground="neutral-medium">
-                        {feature}
-                      </Text>
-                    </Row>
-                  ))}
-                </Column>
-              )}
-            </Column>
+              {/* Right: image */}
+              <Column className={styles.serviceMedia} flex={1}>
+                <div className={styles.imageFrame}>
+                  <img
+                    className={styles.image}
+                    src={service.image.src}
+                    alt={service.image.alt}
+                    loading="lazy"
+                  />
+                </div>
+              </Column>
+            </Row>
           </RevealFx>
         ))}
-      </Row>
+      </Column>
     </Column>
   );
 };
