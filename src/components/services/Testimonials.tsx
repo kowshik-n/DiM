@@ -13,21 +13,24 @@ interface Testimonial {
 
 const testimonials: Testimonial[] = [
   {
-    quote: "We saw a 972.7% growth in just 3 months. The team's data-driven approach and creative campaigns completely transformed our digital presence.",
+    quote:
+      "We saw a 972.7% growth in just 3 months. The team's data-driven approach and creative campaigns completely transformed our digital presence.",
     author: "Sarah Johnson",
     role: "Marketing Director",
     company: "TechStart Inc.",
     result: "972.7% Growth",
   },
   {
-    quote: "Their Meta Ads strategy generated 620% more engagement and 1.9K organic reach. Best ROI we've ever had from a marketing agency.",
+    quote:
+      "Their Meta Ads strategy generated 620% more engagement and 1.9K organic reach. Best ROI we've ever had from a marketing agency.",
     author: "Michael Chen",
     role: "CEO",
     company: "Fashion Retail Co.",
     result: "620% Engagement",
   },
   {
-    quote: "From SEO to social media management, they handle everything. Our leads increased by 300% and conversion rates doubled.",
+    quote:
+      "From SEO to social media management, they handle everything. Our leads increased by 300% and conversion rates doubled.",
     author: "Emma Rodriguez",
     role: "Business Owner",
     company: "Local Services",
@@ -37,7 +40,14 @@ const testimonials: Testimonial[] = [
 
 export const Testimonials = () => {
   return (
-    <Column fillWidth gap="xl" paddingY="xl" background="neutral-alpha-weak">
+    <Column
+      id="testimonials"
+      className={styles.testimonialsSection}
+      fillWidth
+      gap="xl"
+      paddingY="xl"
+      background="neutral-alpha-weak"
+    >
       <Column fillWidth gap="m" paddingX="l" horizontal="center">
         <RevealFx translateY="16" delay={0.2}>
           <Heading
@@ -61,13 +71,7 @@ export const Testimonials = () => {
         </RevealFx>
       </Column>
 
-      <Row
-        fillWidth
-        gap="m"
-        paddingX="l"
-        wrap
-        horizontal="center"
-      >
+      <Row fillWidth gap="m" paddingX="l" wrap horizontal="center">
         {testimonials.map((testimonial, index) => (
           <RevealFx
             key={testimonial.author}
