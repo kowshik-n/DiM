@@ -1,6 +1,6 @@
 "use client";
 
-import { Column, Row, Heading, Text, RevealFx } from "@once-ui-system/core";
+import { Column, Heading, Text, RevealFx } from "@once-ui-system/core";
 import styles from "./Testimonials.module.scss";
 
 interface Testimonial {
@@ -36,19 +36,60 @@ const testimonials: Testimonial[] = [
     company: "Local Services",
     result: "300% More Leads",
   },
+  {
+    quote:
+      "Professional, responsive, and results-oriented. They helped us scale our ad spend while maintaining strong ROAS.",
+    author: "James Wilson",
+    role: "Growth Lead",
+    company: "SaaS Startup",
+    result: "10x Ad Scale",
+  },
+  {
+    quote:
+      "The SEO results exceeded our expectations. We went from page 5 to ranking #1 for our main keywords in under 6 months.",
+    author: "Lisa Thompson",
+    role: "Operations Manager",
+    company: "E-commerce Plus",
+    result: "#1 Google Ranking",
+  },
 ];
 
-export const Testimonials = () => {
-  return (
-    <Column
-      id="testimonials"
-      className={styles.testimonialsSection}
-      fillWidth
-      gap="xl"
-      paddingY="xl"
-      background="neutral-alpha-weak"
+const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
+  <div className={styles.card}>
+    {testimonial.result && (
+      <div className={styles.resultBadge}>
+        <Text variant="label-default-s" weight="strong">
+          {testimonial.result}
+        </Text>
+      </div>
+    )}
+
+    <Text
+      variant="body-default-l"
+      onBackground="neutral-strong"
+      className={styles.quote}
     >
-      <Column fillWidth gap="m" paddingX="l" horizontal="center">
+      "{testimonial.quote}"
+    </Text>
+
+    <div className={styles.authorInfo}>
+      <Text variant="body-default-m" weight="strong">
+        {testimonial.author}
+      </Text>
+      <Text variant="body-default-s" onBackground="neutral-weak">
+        {testimonial.role} at {testimonial.company}
+      </Text>
+    </div>
+  </div>
+);
+
+export const Testimonials = () => {
+  // Duplicate testimonials for seamless infinite scroll
+  const duplicatedTestimonials = [...testimonials, ...testimonials];
+
+  return (
+    <Column id="testimonials" fillWidth gap="xl" paddingY="xl" paddingX="l">
+      <Column fillWidth gap="m" horizontal="center" align="center">
         <RevealFx translateY="16" delay={0.2}>
           <Heading
             as="h2"
@@ -66,68 +107,23 @@ export const Testimonials = () => {
             align="center"
             maxWidth="32"
           >
-            Real results from real businesses
+            Real results from real businesses we've helped grow
           </Text>
         </RevealFx>
       </Column>
 
-      <Row fillWidth gap="m" paddingX="l" wrap horizontal="center">
-        {testimonials.map((testimonial, index) => (
-          <RevealFx
-            key={testimonial.author}
-            translateY="16"
-            delay={0.4 + index * 0.1}
-          >
-            <Column
-              className={styles.testimonialCard}
-              gap="l"
-              padding="xl"
-              radius="l"
-              border="brand-alpha-weak"
-              background="surface"
-              style={{
-                maxWidth: "400px",
-                minHeight: "280px",
-              }}
-            >
-              {testimonial.result && (
-                <Row
-                  padding="s"
-                  paddingX="m"
-                  radius="m"
-                  background="accent-alpha-weak"
-                  style={{ alignSelf: "flex-start" }}
-                >
-                  <Text
-                    variant="label-default-s"
-                    onBackground="accent-strong"
-                    weight="strong"
-                  >
-                    {testimonial.result}
-                  </Text>
-                </Row>
-              )}
-
-              <Text
-                variant="body-default-l"
-                onBackground="neutral-strong"
-                style={{ fontStyle: "italic" }}
-              >
-                "{testimonial.quote}"
-              </Text>
-
-              <Column gap="xs">
-                <Text variant="body-default-m" weight="strong">
-                  {testimonial.author}
-                </Text>
-                <Text variant="body-default-s" onBackground="neutral-weak">
-                  {testimonial.role} at {testimonial.company}
-                </Text>
-              </Column>
-            </Column>
-          </RevealFx>
-        ))}
-      </Row>
+      <RevealFx translateY="16" delay={0.4}>
+        <div className={styles.carouselContainer}>
+          <div className={styles.carouselTrack}>
+            {duplicatedTestimonials.map((testimonial, index) => (
+              <TestimonialCard
+                key={`${testimonial.author}-${index}`}
+                testimonial={testimonial}
+              />
+            ))}
+          </div>
+        </div>
+      </RevealFx>
     </Column>
   );
 };
