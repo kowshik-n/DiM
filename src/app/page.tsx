@@ -3,20 +3,13 @@ import {
   Text,
   RevealFx,
   Column,
-  Badge,
   Row,
   Schema,
   Meta,
   Line,
 } from "@once-ui-system/core";
 import { home, about, person, baseURL, routes } from "@/resources";
-import {
-  HeroSection,
-  HomeSections,
-  Mailchimp,
-  Services,
-  Testimonials,
-} from "@/components";
+import { HeroSection, Mailchimp, Services, Testimonials } from "@/components";
 import { Projects } from "@/components/work/Projects";
 import { Posts } from "@/components/blog/Posts";
 
@@ -53,11 +46,6 @@ export default function Home() {
 
       {/* Services (immediately after hero) */}
       <Services />
-
-      {/* About/Profile Sections */}
-      <RevealFx translateY="16" delay={0.55}>
-        <HomeSections />
-      </RevealFx>
 
       {/* Testimonials */}
       <Testimonials />

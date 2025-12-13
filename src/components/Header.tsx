@@ -11,7 +11,7 @@ import styles from "./Header.module.scss";
 
 type TimeDisplayProps = {
   timeZone: string;
-  locale?: string; // Optionally allow locale, defaulting to 'en-GB'
+  locale?: string;
 };
 
 const TimeDisplay: React.FC<TimeDisplayProps> = ({
@@ -105,6 +105,7 @@ export const Header = () => {
               textVariant="body-default-s"
               suppressHydrationWarning
             >
+              {/* Home */}
               {routes["/"] && (
                 <ToggleButton
                   prefixIcon="home"
@@ -113,6 +114,8 @@ export const Header = () => {
                 />
               )}
               <Line background="neutral-alpha-medium" vert maxHeight="24" />
+
+              {/* Services (in-page anchor) */}
               <Row s={{ hide: true }}>
                 <ToggleButton
                   prefixIcon="rocket"
@@ -123,18 +126,8 @@ export const Header = () => {
               <Row hide s={{ hide: false }}>
                 <ToggleButton prefixIcon="rocket" href="/#services" />
               </Row>
-              {/* In-page navigation for main sections on the home page */}
-              <Row s={{ hide: true }}>
-                <ToggleButton
-                  prefixIcon="grid"
-                  href="/#experience-results"
-                  label="Experience & results"
-                />
-              </Row>
-              <Row hide s={{ hide: false }}>
-                <ToggleButton prefixIcon="grid" href="/#experience-results" />
-              </Row>
-              {/* Testimonials anchor (in-page) */}
+
+              {/* Testimonials (in-page anchor) */}
               <Row s={{ hide: true }}>
                 <ToggleButton
                   prefixIcon="star"
@@ -145,22 +138,22 @@ export const Header = () => {
               <Row hide s={{ hide: false }}>
                 <ToggleButton prefixIcon="star" href="/#testimonials" />
               </Row>
+
+              {/* Projects (link to /work) */}
+              <Row s={{ hide: true }}>
+                <ToggleButton
+                  prefixIcon="briefcase"
+                  href="/work"
+                  label="Projects"
+                />
+              </Row>
+              <Row hide s={{ hide: false }}>
+                <ToggleButton prefixIcon="briefcase" href="/work" />
+              </Row>
+
               {display.themeSwitcher && (
                 <>
                   <Line background="neutral-alpha-medium" vert maxHeight="24" />
-                  {/* Services */}
-
-                  {/* Projects (link to /work) */}
-                  <Row s={{ hide: true }}>
-                    <ToggleButton
-                      prefixIcon="briefcase"
-                      href="/work"
-                      label="Projects"
-                    />
-                  </Row>
-                  <Row hide s={{ hide: false }}>
-                    <ToggleButton prefixIcon="briefcase" href="/work" />
-                  </Row>
                   <ThemeToggle />
                 </>
               )}
