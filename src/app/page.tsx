@@ -69,8 +69,15 @@ export default function Home() {
           </Row>
         </Column>
       )}
-      {/* More Projects */}
-      <Projects range={[2]} />
+      {/* Featured Projects */}
+      <Column id="projects" fillWidth maxWidth="m" gap="24" marginBottom="l" horizontal="center">
+        <Row fillWidth paddingLeft="l" paddingTop="24">
+          <Heading as="h2" variant="display-strong-xs" wrap="balance">
+            Featured Projects
+          </Heading>
+        </Row>
+        <Projects range={[1, 4]} />
+      </Column>
 
       {/* Newsletter */}
       <Mailchimp />

@@ -139,16 +139,16 @@ export const Header = () => {
                 <ToggleButton prefixIcon="star" href="/#testimonials" />
               </Row>
 
-              {/* Projects (link to /work) */}
+              {/* Projects (in-page anchor) */}
               <Row s={{ hide: true }}>
                 <ToggleButton
                   prefixIcon="briefcase"
-                  href="/work"
+                  href="/#projects"
                   label="Projects"
                 />
               </Row>
               <Row hide s={{ hide: false }}>
-                <ToggleButton prefixIcon="briefcase" href="/work" />
+                <ToggleButton prefixIcon="briefcase" href="/#projects" />
               </Row>
 
               {display.themeSwitcher && (

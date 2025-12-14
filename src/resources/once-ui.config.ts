@@ -20,7 +20,7 @@ const baseURL: string = "https://your-marketing-site.com";
 const routes: RoutesConfig = {
   "/": true,
   "/about": false,
-  "/work": true,
+  "/work": false, // Projects are shown on home page via scroll
   // Set to true later if you add real marketing articles
   "/blog": false,
   // Set to true later if you want a gallery of ad creatives or brand visuals
