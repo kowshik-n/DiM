@@ -72,6 +72,36 @@ export const HeroSection = () => {
               <div className={styles.avatarGlow}>
                 <Avatar src={person.avatar} size="xl" />
               </div>
+              <div className={styles.floatingLogos} aria-hidden>
+                <img
+                  src="/images/meta-logo.png"
+                  alt=""
+                  className={styles.floatingLogo}
+                  width={44}
+                  height={44}
+                />
+                <img
+                  src="/images/seo-logo.png"
+                  alt=""
+                  className={styles.floatingLogo}
+                  width={36}
+                  height={36}
+                />
+                <img
+                  src="/images/social-logo.png"
+                  alt=""
+                  className={styles.floatingLogo}
+                  width={32}
+                  height={32}
+                />
+                <img
+                  src="/images/camera-logo.png"
+                  alt=""
+                  className={styles.floatingLogo}
+                  width={28}
+                  height={28}
+                />
+              </div>
             </Column>
           )}
 

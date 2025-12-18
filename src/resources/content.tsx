@@ -27,7 +27,12 @@ const person: Person = {
 const newsletter: Newsletter = {
   display: true,
   title: <>Get Marketing Insights That Actually Work</>,
-  description: <>Join 500+ businesses receiving actionable tips on Meta Ads, SEO, and growth strategies delivered monthly.</>,
+  description: (
+    <>
+      Join 500+ businesses receiving actionable tips on Meta Ads, SEO, and
+      growth strategies delivered monthly.
+    </>
+  ),
 };
 
 const social: Social = [
@@ -77,21 +82,20 @@ const home: Home = {
     display: true,
     title: (
       <Row gap="12" vertical="center">
-        <strong className="ml-4">Performance Marketing</strong>{" "}
-        <Line background="brand-alpha-strong" vert height="20" />
-        <Text marginRight="4" onBackground="brand-medium">
-          972.7% Growth · 620% Engagement
-        </Text>
+        <strong className="ml-4">Digital Marketing</strong>
+        {/* <Line background="brand-alpha-strong" vert height="20" /> */}
+        {/* <Text marginRight="4" onBackground="brand-medium">
+          Performance‑first campaigns for measurable growth
+        </Text> */}
       </Row>
     ),
-    // This links to your primary case study under /work. You can update the slug later.
-    href: "/work/building-once-ui-a-customizable-design-system",
+    // Link to the Meta Advertising service page
+    // href: "/work/meta-advertising-services",
   },
   subline: (
     <>
-      Performance Marketing for Growing Businesses. End-to-end services from
-      Meta Ads to SEO—helping brands scale with data-driven strategies and
-      creative excellence.
+      End-to-end Meta advertising, Social Media Management, Content Creation,
+      and SEO — driving measurable growth with data and creative execution.
     </>
   ),
 };

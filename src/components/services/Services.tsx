@@ -213,12 +213,7 @@ export const Services = () => {
                     ))}
                   </ul>
 
-                  {/* CTA */}
-                  <div className={styles.serviceCta}>
-                    <Button href={service.href} variant="secondary" size="m">
-                      Explore Service
-                    </Button>
-                  </div>
+                  {/* CTA removed per request */}
                 </div>
 
                 {/* Right: image */}
