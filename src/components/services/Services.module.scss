@@ -99,6 +99,56 @@
   flex-shrink: 0;
 }
 
+.featureVerified {
+  width: 18px;
+  height: 18px;
+  display: block;
+  object-fit: contain;
+}
+
+.metaLogoWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.metaLogo {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  display: block;
+}
+
+.seoLogo {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  display: block;
+}
+
+.socialLogo {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  display: block;
+}
+
+.cameraLogo {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  display: block;
+}
+
+.featureIconWrapNoBg {
+  background: transparent !important;
+  border: 0 !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+}
+
 .serviceCta {
   margin-top: var(--static-space-8);
 }

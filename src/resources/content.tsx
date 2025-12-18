@@ -13,7 +13,7 @@ import { Line, Row, Text } from "@once-ui-system/core";
 const person: Person = {
   firstName: "Your",
   lastName: "Agency",
-  name: `Digital Growth Agency`,
+  name: "Name",
   role: "Performance Marketing & Growth",
   avatar: "/images/avatar.jpg",
   email: "hello@digitalagency.com",

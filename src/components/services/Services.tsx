@@ -10,6 +10,7 @@ import {
   Icon,
 } from "@once-ui-system/core";
 import styles from "./Services.module.scss";
+import { MdVerified } from "react-icons/md";
 
 interface Service {
   title: string;
@@ -29,10 +30,10 @@ const services: Service[] = [
     href: "/work/meta-advertising-services",
     image: "/images/projects/project-01/cover-01.jpg",
     features: [
-      { text: "Campaign setup & funnel creation", icon: "check" },
+      { text: "Campaign setup & funnel creation", icon: "fb-verified" },
       { text: "Audience research & targeting", icon: "search" },
       { text: "A/B testing & optimization", icon: "refresh" },
-      { text: "Retargeting & conversion tracking", icon: "check" },
+      { text: "Retargeting & conversion tracking", icon: "fb-verified" },
     ],
   },
   {
@@ -43,10 +44,10 @@ const services: Service[] = [
     href: "/work/social-media-management",
     image: "/images/projects/project-01/cover-02.jpg",
     features: [
-      { text: "Content planning & strategy", icon: "check" },
-      { text: "Community engagement", icon: "check" },
-      { text: "Monthly growth reports", icon: "check" },
-      { text: "Profile optimization", icon: "check" },
+      { text: "Content planning & strategy", icon: "fb-verified" },
+      { text: "Community engagement", icon: "fb-verified" },
+      { text: "Monthly growth reports", icon: "fb-verified" },
+      { text: "Profile optimization", icon: "fb-verified" },
     ],
   },
   {
@@ -57,10 +58,10 @@ const services: Service[] = [
     href: "/work/content-creation-services",
     image: "/images/projects/project-01/cover-03.jpg",
     features: [
-      { text: "Social media posts & reels", icon: "check" },
-      { text: "Ad creatives for campaigns", icon: "check" },
-      { text: "Photography & video content", icon: "check" },
-      { text: "Brand-aligned aesthetics", icon: "check" },
+      { text: "Social media posts & reels", icon: "fb-verified" },
+      { text: "Ad creatives for campaigns", icon: "fb-verified" },
+      { text: "Photography & video content", icon: "fb-verified" },
+      { text: "Brand-aligned aesthetics", icon: "fb-verified" },
     ],
   },
   {
@@ -71,10 +72,10 @@ const services: Service[] = [
     href: "/work/seo-services",
     image: "/images/projects/project-01/cover-04.jpg",
     features: [
-      { text: "Complete website SEO audit", icon: "check" },
+      { text: "Complete website SEO audit", icon: "fb-verified" },
       { text: "Keyword research & strategy", icon: "search" },
-      { text: "On-page & technical SEO", icon: "check" },
-      { text: "Local SEO optimization", icon: "check" },
+      { text: "On-page & technical SEO", icon: "fb-verified" },
+      { text: "Local SEO optimization", icon: "fb-verified" },
     ],
   },
 ];
@@ -125,11 +126,57 @@ export const Services = () => {
                   {/* Icon + Title row */}
                   <div className={styles.serviceHeader}>
                     <div className={styles.serviceIcon}>
-                      <Icon
-                        name={service.icon as any}
-                        size="l"
-                        onBackground="brand-strong"
-                      />
+                      {service.title === "Meta Advertising" ? (
+                        <span className={styles.metaLogoWrap}>
+                          <img
+                            src="/images/meta-logo.png"
+                            alt="Meta logo"
+                            className={styles.metaLogo}
+                            width={40}
+                            height={40}
+                            loading="lazy"
+                          />
+                        </span>
+                      ) : service.title === "SEO Services" ? (
+                        <span className={styles.metaLogoWrap}>
+                          <img
+                            src="/images/seo-logo.png"
+                            alt="SEO logo"
+                            className={styles.seoLogo}
+                            width={40}
+                            height={40}
+                            loading="lazy"
+                          />
+                        </span>
+                      ) : service.title === "Social Media Management" ? (
+                        <span className={styles.metaLogoWrap}>
+                          <img
+                            src="/images/social-logo.png"
+                            alt="Social logo"
+                            className={styles.socialLogo}
+                            width={40}
+                            height={40}
+                            loading="lazy"
+                          />
+                        </span>
+                      ) : service.title === "Content Creation" ? (
+                        <span className={styles.metaLogoWrap}>
+                          <img
+                            src="/images/camera-logo.png"
+                            alt="Content logo"
+                            className={styles.cameraLogo}
+                            width={40}
+                            height={40}
+                            loading="lazy"
+                          />
+                        </span>
+                      ) : (
+                        <Icon
+                          name={service.icon as any}
+                          size="l"
+                          onBackground="brand-strong"
+                        />
+                      )}
                     </div>
                     <Heading as="h3" variant="heading-strong-xl">
                       {service.title}
@@ -144,11 +191,16 @@ export const Services = () => {
                   <ul className={styles.featureList}>
                     {service.features.map((feature) => (
                       <li key={feature.text} className={styles.featureItem}>
-                        <span className={styles.featureIconWrap}>
-                          <Icon
-                            name={feature.icon as any}
-                            size="xs"
-                            onBackground="brand-strong"
+                        <span
+                          className={`${styles.featureIconWrap} ${styles.featureIconWrapNoBg}`}
+                        >
+                          <img
+                            src="/images/verified-logo.png"
+                            alt="verified"
+                            className={styles.featureVerified}
+                            width={18}
+                            height={18}
+                            loading="lazy"
                           />
                         </span>
                         <Text
