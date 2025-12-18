@@ -105,7 +105,7 @@ export const Testimonials = () => {
             variant="body-default-l"
             onBackground="neutral-weak"
             align="center"
-            maxWidth="32"
+            style={{ maxWidth: "32rem" }}
           >
             Real results from real businesses we've helped grow
           </Text>

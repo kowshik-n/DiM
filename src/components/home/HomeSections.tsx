@@ -85,8 +85,8 @@ export const HomeSections = () => {
                           className={styles.bulletPoint}
                           background="brand-alpha-medium"
                           radius="full"
-                          minWidth="6"
-                          minHeight="6"
+                          minWidth={6}
+                          minHeight={6}
                           marginTop="8"
                         />
                         <Text

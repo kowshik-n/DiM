@@ -1,7 +1,16 @@
 @use "./breakpoints.scss" as breakpoints;
 
+.socialLinks {
+  gap: 12px;
+}
+
 @media (max-width: breakpoints.$s) {
-    .mobile {
-        text-align: center;
-    }
+  .mobile {
+    text-align: center;
+  }
+
+  .socialLinks {
+    gap: 8px;
+    margin-top: 12px;
+  }
 }
