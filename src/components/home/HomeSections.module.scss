@@ -1,87 +1,150 @@
 @use "../breakpoints.scss" as breakpoints;
 
-// Experience Grid
-.experienceGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--static-space-l);
-  width: 100%;
-  margin-top: var(--static-space-l);
+.floatingLogos {
+  position: absolute;
+  right: -10px;
+  top: 8px;
+  width: 220px;
+  height: 220px;
+  pointer-events: none;
+  display: block;
+  z-index: 5;
 }
 
-// Hero Section
-.heroSection {
-  position: relative;
-  border-radius: var(--radius-xl);
-  // background: linear-gradient(
-  //   135deg,
-  //   var(--surface-background) 0%,
-  //   var(--brand-alpha-weak) 50%,
-  //   var(--accent-alpha-weak) 100%
-  // );
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    // background: radial-gradient(
-    //   ellipse at 50% 20%,
-    //   var(--accent-alpha-weak) 0%,
-    //   transparent 60%
-    // );
-    border-radius: var(--radius-xl);
-    opacity: 0.4;
-    pointer-events: none;
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(
-        circle at 20% 80%,
-        var(--brand-alpha-weak) 0%,
-        transparent 40%
-      ),
-      radial-gradient(
-        circle at 80% 80%,
-        var(--accent-alpha-weak) 0%,
-        transparent 40%
-      );
-    border-radius: var(--radius-xl);
-    opacity: 0.3;
-    pointer-events: none;
-  }
+.floatingLogo {
+  position: absolute;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 14px rgba(15, 23, 42, 0.08));
+  transform-origin: center;
+  animation: floatLogo 6s ease-in-out infinite;
 }
 
-.heroContent {
-  display: grid;
-  grid-template-columns: 3fr 2fr; // ≈ 60% / 40%
-  align-items: flex-start;
-  column-gap: var(--static-space-xl);
+.floatingLogo:nth-child(1) {
+  /* top-right */
+  top: 56px;
+  right: 169px;
+  transform: rotate(-8deg);
+  animation-delay: 0s;
 }
 
-.avatarWrapper {
-  position: relative;
-  animation: float 6s ease-in-out infinite;
+.floatingLogo:nth-child(2) {
+  /* upper-right */
+  top: 31px;
+  left: 147px;
+  transform: rotate(6deg);
+  animation-delay: 0.5s;
+}
+.floatingLogo:nth-child(3) {
+  /* upper-right */
+  top: 115px;
+  left: 169px;
+
+  transform: rotate(6deg);
+  animation-delay: 0.5s;
+}
+.floatingLogo:nth-child(4) {
+  /* upper-right */
+  left: 24px;
+  top: 150px;
+
+  transform: rotate(6deg);
+  animation-delay: 0.5s;
 }
 
-@keyframes float {
+.floatingLogos {
+  /* center the logos relative to the avatar wrapper */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 220px;
+  height: 220px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  display: block;
+  z-index: 5;
+}
+
+.floatingLogo {
+  position: absolute;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 14px rgba(15, 23, 42, 0.08));
+  transform-origin: center;
+  animation: floatLogo 6s ease-in-out infinite;
+}
+
+// .floatingLogo:nth-child(3) {
+//
+//   /* position each logo around the avatar using percentage offsets */
+//   .floatingLogo:nth-child(1) {
+//     /* top-right */
+//     left: 72%;
+//     top: 6%;
+//     transform: translate(-50%, -50%) rotate(-8deg);
+//     animation-delay: 0s;
+//   }
+
+//   .floatingLogo:nth-child(2) {
+//     /* upper-right */
+//     left: 88%;
+//     top: 36%;
+//     transform: translate(-50%, -50%) rotate(6deg);
+//     animation-delay: 0.5s;
+//   }
+
+//   .floatingLogo:nth-child(3) {
+//     /* right-mid */
+//     left: 68%;
+//     top: 74%;
+//     transform: translate(-50%, -50%) rotate(-6deg);
+//     animation-delay: 1s;
+//   }
+
+//   .floatingLogo:nth-child(4) {
+//     /* bottom-left */
+//     left: 20%;
+//     top: 86%;
+//     transform: translate(-50%, -50%) rotate(10deg);
+//     animation-delay: 1.6s;
+//   }
+
+@keyframes floatLogo {
   0%,
   100% {
-    transform: translateY(0px);
+    transform: translateY(0) rotate(var(--tw-rotate, 0deg));
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-10px) rotate(var(--tw-rotate, 0deg));
   }
 }
+//   //   inset: -6px;
+//   //   border-radius: 50%;
+//   //   background: linear-gradient(
+//   //     135deg,
+//   //     var(--brand-background-strong),
+//   //     var(--accent-background-strong)
+//   //   );
+//   //   z-index: -1;
+//   //   opacity: 0.6;
+//   //   filter: blur(20px);
+//   //   animation: pulse 3s ease-in-out infinite;
+//   // }
 
+//   &::after {
+//     content: "";
+//     position: absolute;
+//     inset: -3px;
+//     border-radius: 50%;
+//     background: linear-gradient(
+//       135deg,
+//       var(--brand-border-medium),
+//       var(--accent-border-medium)
+//     );
+//     z-index: -1;
+//     opacity: 0.8;
+//   }
+// }
 .avatarGlow {
   position: relative;
 
@@ -319,6 +382,10 @@
   .heroSection {
     padding-left: var(--static-space-m);
     padding-right: var(--static-space-m);
+  }
+
+  .floatingLogos {
+    display: none;
   }
 
   .heroContent {
