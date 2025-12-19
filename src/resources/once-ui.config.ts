@@ -21,10 +21,6 @@ const routes: RoutesConfig = {
   "/": true,
   "/about": false,
   "/work": false, // Projects are shown on home page via scroll
-  // Set to true later if you add real marketing articles
-  "/blog": false,
-  // Set to true later if you want a gallery of ad creatives or brand visuals
-  "/gallery": false,
 };
 
 const display: DisplayConfig = {
