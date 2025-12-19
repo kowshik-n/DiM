@@ -20,6 +20,12 @@ const nextConfig = {
   basePath,
   assetPrefix: basePath ? `${basePath}/` : undefined,
 
+  // Expose basePath to the client so we can prefix static asset URLs (e.g. /images/*)
+  // when deployed as a GitHub Pages project site under /<repo>.
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
+  },
+
   pageExtensions: ["ts", "tsx", "md", "mdx"],
   transpilePackages: ["next-mdx-remote"],
   images: {

@@ -16,6 +16,7 @@ import {
   Line,
 } from "@once-ui-system/core";
 import { baseURL, about, home, person, work } from "@/resources";
+import { withBasePath } from "@/utils/withBasePath";
 import { formatDate } from "@/utils/formatDate";
 import { ScrollToHash, CustomMDX } from "@/components";
 import { Metadata } from "next";
@@ -71,7 +72,7 @@ export default async function Project({
 
   const avatars =
     post.metadata.team?.map((person) => ({
-      src: person.avatar,
+      src: withBasePath(person.avatar),
     })) || [];
 
   return (
@@ -119,7 +120,13 @@ export default async function Project({
         </Row>
       </Row>
       {post.metadata.images.length > 0 && (
-        <Media priority aspectRatio="16 / 9" radius="m" alt="image" src={post.metadata.images[0]} />
+        <Media
+          priority
+          aspectRatio="16 / 9"
+          radius="m"
+          alt="image"
+          src={withBasePath(post.metadata.images[0])}
+        />
       )}
       <Column style={{ margin: "auto" }} as="article" maxWidth="xs">
         <CustomMDX source={post.content} />

@@ -9,6 +9,7 @@ import {
   Button,
   Icon,
 } from "@once-ui-system/core";
+import { withBasePath } from "@/utils/withBasePath";
 import styles from "./Services.module.scss";
 import { MdVerified } from "react-icons/md";
 
@@ -142,7 +143,7 @@ export const Services = () => {
                       {service.title === "Meta Advertising" ? (
                         <span className={styles.metaLogoWrap}>
                           <img
-                            src="/images/meta-logo.png"
+                            src={withBasePath("/images/meta-logo.png")}
                             alt="Meta logo"
                             className={styles.metaLogo}
                             width={40}
@@ -153,7 +154,7 @@ export const Services = () => {
                       ) : service.title === "SEO Services" ? (
                         <span className={styles.metaLogoWrap}>
                           <img
-                            src="/images/seo-logo.png"
+                            src={withBasePath("/images/seo-logo.png")}
                             alt="SEO logo"
                             className={styles.seoLogo}
                             width={40}
@@ -164,7 +165,7 @@ export const Services = () => {
                       ) : service.title === "Social Media Management" ? (
                         <span className={styles.metaLogoWrap}>
                           <img
-                            src="/images/social-logo.png"
+                            src={withBasePath("/images/social-logo.png")}
                             alt="Social logo"
                             className={styles.socialLogo}
                             width={40}
@@ -175,7 +176,7 @@ export const Services = () => {
                       ) : service.title === "Content Creation" ? (
                         <span className={styles.metaLogoWrap}>
                           <img
-                            src="/images/camera-logo.png"
+                            src={withBasePath("/images/camera-logo.png")}
                             alt="Content logo"
                             className={styles.cameraLogo}
                             width={40}
@@ -208,7 +209,7 @@ export const Services = () => {
                           className={`${styles.featureIconWrap} ${styles.featureIconWrapNoBg}`}
                         >
                           <img
-                            src="/images/verified-logo.png"
+                            src={withBasePath("/images/verified-logo.png")}
                             alt="verified"
                             className={styles.featureVerified}
                             width={18}
@@ -231,7 +232,11 @@ export const Services = () => {
 
                 {/* Right: image */}
                 <div className={styles.serviceImage}>
-                  <img src={service.image} alt={service.title} loading="lazy" />
+                  <img
+                    src={withBasePath(service.image)}
+                    alt={service.title}
+                    loading="lazy"
+                  />
                 </div>
               </div>
             </div>

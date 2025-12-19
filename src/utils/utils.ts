@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import { withBasePath } from "@/utils/withBasePath";
 
 type Team = {
   name: string;
@@ -44,10 +45,17 @@ function readMDXFile(filePath: string) {
     subtitle: data.subtitle || "",
     publishedAt: data.publishedAt,
     summary: data.summary || "",
-    image: data.image || "",
-    images: data.images || [],
+    image: data.image ? withBasePath(data.image) : "",
+    images: Array.isArray(data.images)
+      ? data.images.map((img: string) => withBasePath(img))
+      : [],
     tag: data.tag || [],
-    team: data.team || [],
+    team: Array.isArray(data.team)
+      ? data.team.map((member: Team) => ({
+          ...member,
+          avatar: member.avatar ? withBasePath(member.avatar) : member.avatar,
+        }))
+      : [],
     link: data.link || "",
   };
 
