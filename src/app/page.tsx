@@ -30,7 +30,8 @@ export default function Home() {
         path={home.path}
         title={home.title}
         description={home.description}
-        image={`/api/og/generate?title=${encodeURIComponent(home.title)}`}
+        // Static hosting (GitHub Pages) can't run the OG image generation API route.
+        image={home.image}
         author={{
           name: person.name,
           url: `${baseURL}${about.path}`,

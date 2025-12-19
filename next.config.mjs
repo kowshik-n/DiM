@@ -5,11 +5,26 @@ const withMDX = mdx({
   options: {},
 });
 
+// GitHub Pages project sites are served from `/<repo>`.
+// When deploying via Actions, set basePath/assetPrefix so asset URLs resolve correctly.
+const repo = process.env.GITHUB_REPOSITORY?.split("/")[1];
+const isGitHubActions = process.env.GITHUB_ACTIONS === "true";
+const basePath = isGitHubActions && repo ? `/${repo}` : "";
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Produce a static site in `out/` for GitHub Pages.
+  output: "export",
+  trailingSlash: true,
+
+  basePath,
+  assetPrefix: basePath ? `${basePath}/` : undefined,
+
   pageExtensions: ["ts", "tsx", "md", "mdx"],
   transpilePackages: ["next-mdx-remote"],
   images: {
+    // GitHub Pages can't run the Next.js image optimizer.
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: "https",
