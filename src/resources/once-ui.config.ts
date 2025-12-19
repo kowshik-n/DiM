@@ -8,7 +8,6 @@ import {
   RoutesConfig,
   SameAsConfig,
   SchemaConfig,
-  SocialSharingConfig,
   StyleConfig,
 } from "@/types";
 import { home } from "./index";
@@ -200,22 +199,6 @@ const sameAs: SameAsConfig = {
   discord: "",
 };
 
-// social sharing configuration for blog posts
-const socialSharing: SocialSharingConfig = {
-  display: true,
-  platforms: {
-    x: true,
-    linkedin: true,
-    facebook: false,
-    pinterest: false,
-    whatsapp: false,
-    reddit: false,
-    telegram: false,
-    email: true,
-    copyLink: true,
-  },
-};
-
 export {
   display,
   mailchimp,
@@ -226,7 +209,6 @@ export {
   style,
   schema,
   sameAs,
-  socialSharing,
   effects,
   dataStyle,
 };

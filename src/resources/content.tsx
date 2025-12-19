@@ -1,6 +1,5 @@
 import {
   About,
-  Blog,
   Home,
   Newsletter,
   Person,
@@ -410,15 +409,6 @@ const about: About = {
   },
 };
 
-const blog: Blog = {
-  path: "/blog",
-  label: "Insights",
-  title: "Thoughts on digital marketing and growth",
-  description: `Articles where ${person.name} breaks down campaigns, experiments, and lessons from the field.`,
-  // Create new blog posts by adding a new .mdx file to app/blog/posts
-  // All posts will be listed on the /blog route when routes["/blog"] is enabled
-};
-
 const work: Work = {
   path: "/work",
   label: "Case studies",
@@ -428,4 +418,4 @@ const work: Work = {
   // All projects will be listed on the /home and /work routes
 };
 
-export { person, social, newsletter, home, about, blog, work };
+export { person, social, newsletter, home, about, work };
