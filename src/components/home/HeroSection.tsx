@@ -14,6 +14,11 @@ import {
 import { about, person, social, home } from "@/resources";
 import styles from "./HomeSections.module.scss";
 
+// TODO: Update these to your real business number.
+const CONTACT_PHONE_DISPLAY = "+91 00000 00000";
+// Digits only, including country code (used for https://wa.me/<number>)
+const WHATSAPP_NUMBER = "910000000000";
+
 export const HeroSection = () => {
   if (!about.intro.display) return null;
 
@@ -154,6 +159,7 @@ export const HeroSection = () => {
             </Row>
           )}
 
+          {/*
           <Row gap="8" wrap horizontal="center" paddingTop="8">
             {about.calendar.display && (
               <Button
@@ -174,6 +180,26 @@ export const HeroSection = () => {
             >
               Get in touch
             </Button>
+          </Row>
+          */}
+
+          <Row gap="8" wrap horizontal="center" paddingTop="12">
+            <Button
+              href={`mailto:${person.email}`}
+              size="m"
+              variant="secondary"
+              prefixIcon="email"
+              label={person.email}
+              className={styles.ctaButton}
+            />
+            <Button
+              href={`https://wa.me/${WHATSAPP_NUMBER}`}
+              size="m"
+              variant="primary"
+              prefixIcon="whatsapp"
+              label={`Call / WhatsApp: ${CONTACT_PHONE_DISPLAY}`}
+              className={styles.ctaButton}
+            />
           </Row>
         </Column>
       </Row>
