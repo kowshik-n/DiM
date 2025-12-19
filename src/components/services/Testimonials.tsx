@@ -88,7 +88,14 @@ export const Testimonials = () => {
   const duplicatedTestimonials = [...testimonials, ...testimonials];
 
   return (
-    <Column id="testimonials" fillWidth gap="xl" paddingY="xl" paddingX="l">
+    <Column
+      id="testimonials"
+      fillWidth
+      gap="xl"
+      paddingY="xl"
+      paddingX="l"
+      s={{ paddingX: "m" }}
+    >
       <Column fillWidth gap="m" horizontal="center" align="center">
         <RevealFx translateY="16" delay={0.2}>
           <Heading

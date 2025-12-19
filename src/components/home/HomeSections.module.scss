@@ -463,6 +463,23 @@
 }
 
 // Responsive
+// Prevent long CTA labels (email / phone) from causing horizontal overflow
+.ctaButton {
+  max-width: 100%;
+
+  // Once UI buttons can apply nowrap internally; force wrap for long strings.
+  overflow-wrap: anywhere;
+  word-break: break-word;
+
+  * {
+    white-space: normal;
+  }
+}
+
+.heroContactButtons {
+  width: 100%;
+}
+
 @media (max-width: breakpoints.$m) {
   .experienceGrid {
     grid-template-columns: 1fr;
@@ -490,5 +507,17 @@
     display: flex;
     flex-direction: column;
     row-gap: var(--static-space-l);
+  }
+}
+
+@media (max-width: breakpoints.$s) {
+  .heroContactButtons {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .heroContactButtons .ctaButton {
+    width: 100%;
   }
 }

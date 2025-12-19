@@ -24,7 +24,7 @@ export function Projects({ range, exclude }: ProjectsProps) {
     : sortedProjects;
 
   return (
-    <Column fillWidth gap="l" paddingX="l" horizontal="center">
+    <Column fillWidth gap="l" paddingX="l" s={{ paddingX: "m" }} horizontal="center">
       {displayedProjects.map((post, index) => (
         <ProjectCard
           priority={index < 2}

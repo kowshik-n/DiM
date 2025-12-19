@@ -44,7 +44,7 @@
 .card {
   position: relative;
   flex-shrink: 0;
-  width: 380px;
+  width: min(380px, 90vw);
   padding: 28px;
   border-radius: var(--radius-l);
   background: var(--surface-background);
@@ -116,7 +116,7 @@
 /* Responsive */
 @media (max-width: 1024px) {
   .card {
-    width: 340px;
+    width: min(340px, 90vw);
     min-height: 280px;
   }
 
@@ -137,7 +137,7 @@
   }
 
   .card {
-    width: 300px;
+    width: min(300px, 90vw);
     padding: 20px;
     min-height: 260px;
     border-radius: var(--radius-m);

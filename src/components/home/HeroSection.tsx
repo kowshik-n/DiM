@@ -183,7 +183,13 @@ export const HeroSection = () => {
           </Row>
           */}
 
-          <Row gap="8" wrap horizontal="center" paddingTop="12">
+          <Row
+            gap="8"
+            wrap
+            horizontal="center"
+            paddingTop="12"
+            className={styles.heroContactButtons}
+          >
             <Button
               href={`mailto:${person.email}`}
               size="m"

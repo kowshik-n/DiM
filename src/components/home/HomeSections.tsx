@@ -33,6 +33,7 @@ export const HomeSections = () => {
                 border="neutral-alpha-weak"
                 radius="xl"
                 padding="xl"
+                s={{ padding: "l" }}
                 gap="m"
               >
                 {/* Top gradient bar */}

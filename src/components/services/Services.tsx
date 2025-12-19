@@ -84,7 +84,7 @@ export const Services = () => {
   return (
     <Column id="services" fillWidth gap="xl" paddingY="xl">
       {/* Section header */}
-      <Column fillWidth gap="m" paddingX="l" horizontal="center">
+      <Column fillWidth gap="m" paddingX="l" s={{ paddingX: "m" }} horizontal="center">
         <RevealFx translateY="16" delay={0.2}>
           <Heading
             as="h2"
@@ -109,7 +109,7 @@ export const Services = () => {
       </Column>
 
       {/* Services list */}
-      <Column fillWidth gap="l" paddingX="l">
+      <Column fillWidth gap="l" paddingX="l" s={{ paddingX: "m" }}>
         {services.map((service, index) => (
           <RevealFx
             key={service.title}
