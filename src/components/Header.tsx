@@ -117,10 +117,14 @@ export const Header = () => {
 
               {/* Services (in-page anchor) */}
               <Row s={{ hide: true }}>
-                <ToggleButton href="/#services" label="Services" />
+                <ToggleButton
+                  prefixIcon="grid"
+                  href="/#services"
+                  label="Services"
+                />
               </Row>
               <Row hide s={{ hide: false }}>
-                <ToggleButton href="/#services" />
+                <ToggleButton prefixIcon="grid" href="/#services" />
               </Row>
 
               {/* Testimonials (in-page anchor) */}

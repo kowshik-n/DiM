@@ -117,13 +117,7 @@ export const Services = () => {
       </Column>
 
       {/* Services list */}
-      <Column
-        fillWidth
-        maxWidth="l"
-        gap="l"
-        paddingX="l"
-        s={{ paddingX: "m" }}
-      >
+      <Column fillWidth maxWidth="l" gap="l" paddingX="l" s={{ paddingX: "m" }}>
         {services.map((service, index) => (
           <RevealFx
             key={service.title}
@@ -187,12 +181,16 @@ export const Services = () => {
                       ) : (
                         <Icon
                           name={service.icon as any}
-                          size="l"
+                          size="m"
                           onBackground="brand-strong"
                         />
                       )}
                     </div>
-                    <Heading as="h3" variant="heading-strong-xl">
+                    <Heading
+                      as="h3"
+                      variant="heading-strong-xl"
+                      className={styles.spa}
+                    >
                       {service.title}
                     </Heading>
                   </div>
