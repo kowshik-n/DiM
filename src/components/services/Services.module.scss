@@ -2,6 +2,7 @@
 
 .serviceCard {
   position: relative;
+  width: 100%;
   background: var(--surface-background);
   border: 1px solid var(--neutral-border-medium);
   border-radius: var(--radius-xl);
@@ -40,8 +41,14 @@
   display: grid;
   grid-template-columns: 1.1fr 1fr;
   gap: var(--static-space-32);
-  align-items: center;
+  align-items: start;
   padding: var(--static-space-32);
+}
+
+// Prevent grid children from causing horizontal overflow (long headings/feature text)
+.serviceContent,
+.serviceImage {
+  min-width: 0;
 }
 
 .serviceContent {
@@ -235,6 +242,8 @@
 
   .serviceHeader {
     gap: var(--static-space-10);
+    flex-wrap: wrap;
+    align-items: flex-start;
   }
 
   .serviceIcon {
