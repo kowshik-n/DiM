@@ -12,8 +12,27 @@ import {
 } from "@/types";
 import { home } from "./index";
 
-// IMPORTANT: Replace with your own domain address - it's used for SEO in meta tags and schema
-const baseURL: string = "https://your-marketing-site.com";
+// IMPORTANT: Replace with your own domain address - it's used for SEO in meta tags and schema.
+//
+// For GitHub Pages deployments, we derive the correct URL automatically at build time.
+// You can always override it by setting NEXT_PUBLIC_SITE_URL.
+const envSiteUrl = process.env.NEXT_PUBLIC_SITE_URL;
+const ghRepo = process.env.GITHUB_REPOSITORY;
+
+let baseURL: string = envSiteUrl ?? "https://your-marketing-site.com";
+
+if (!envSiteUrl && ghRepo) {
+  const [owner, repo] = ghRepo.split("/");
+
+  if (owner && repo) {
+    // User/Org pages use https://<owner>.github.io
+    // Project pages use https://<owner>.github.io/<repo>
+    baseURL =
+      repo === `${owner}.github.io`
+        ? `https://${owner}.github.io`
+        : `https://${owner}.github.io/${repo}`;
+  }
+}
 
 // Enable only the core routes needed for a focused marketing portfolio
 const routes: RoutesConfig = {
