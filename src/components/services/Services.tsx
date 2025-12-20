@@ -87,28 +87,31 @@ export const Services = () => {
       {/* Section header */}
       <Column
         fillWidth
-        maxWidth="m"
         gap="m"
         paddingX="l"
         s={{ paddingX: "m" }}
         horizontal="center"
+        align="center"
+        style={{ textAlign: "center" }}
       >
-        <RevealFx translateY="16" delay={0.2}>
+        <RevealFx translateY="16" delay={0.2} style={{ width: "100%" }}>
           <Heading
             as="h2"
             variant="display-strong-l"
             align="center"
             wrap="balance"
+            style={{ textAlign: "center", width: "100%" }}
           >
             Our Services
           </Heading>
         </RevealFx>
-        <RevealFx translateY="16" delay={0.3}>
+        <RevealFx translateY="16" delay={0.3} style={{ width: "100%" }}>
           <Text
             variant="body-default-l"
             onBackground="neutral-weak"
             align="center"
             wrap="balance"
+            style={{ textAlign: "center", width: "100%" }}
           >
             End-to-end digital marketing solutions designed to scale your
             business
