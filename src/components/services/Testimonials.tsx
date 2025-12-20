@@ -58,7 +58,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
   <div className={styles.card}>
     {testimonial.result && (
       <div className={styles.resultBadge}>
-        <Text variant="label-default-s" weight="strong">
+        <Text variant="label-default-s">
           {testimonial.result}
         </Text>
       </div>
@@ -73,7 +73,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
     </Text>
 
     <div className={styles.authorInfo}>
-      <Text variant="body-default-m" weight="strong">
+      <Text variant="body-default-m">
         {testimonial.author}
       </Text>
       <Text variant="body-default-s" onBackground="neutral-weak">
